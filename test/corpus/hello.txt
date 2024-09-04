@@ -1,0 +1,39 @@
+=================
+Hello Handlebars
+=================
+
+Hello {{world}}!
+
+---
+
+(source_file
+  (literal_text)
+  (handlebars
+    (expression
+	  (identifier)))
+  (literal_text))
+
+=================
+Spaced brackets
+=================
+
+Hello {{ world}}!
+{{ Hello }} world!
+Hello world{{punct }}
+
+---
+
+(source_file
+  (literal_text)
+  (handlebars
+    (expression
+	  (identifier)))
+  (literal_text)
+  (handlebars
+    (expression
+	  (identifier)))
+  (literal_text)
+  (handlebars
+    (expression
+	  (identifier)))
+  (literal_text))

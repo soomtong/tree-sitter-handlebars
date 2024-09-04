@@ -1,11 +1,276 @@
 [
   {
-    "type": "source_file",
+    "type": "block_end",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "hello",
+    "type": "block_start",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "handlebars",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "handleblock",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block_end",
+          "named": true
+        },
+        {
+          "type": "block_start",
+          "named": true
+        },
+        {
+          "type": "handlebars",
+          "named": true
+        },
+        {
+          "type": "handleblock",
+          "named": true
+        },
+        {
+          "type": "literal_text",
+          "named": true
+        },
+        {
+          "type": "macro",
+          "named": true
+        },
+        {
+          "type": "partial",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "macro",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block_end",
+          "named": true
+        },
+        {
+          "type": "handlebars",
+          "named": true
+        },
+        {
+          "type": "handleblock",
+          "named": true
+        },
+        {
+          "type": "literal_text",
+          "named": true
+        },
+        {
+          "type": "macro",
+          "named": true
+        },
+        {
+          "type": "macro_start",
+          "named": true
+        },
+        {
+          "type": "partial",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "macro_start",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "partial",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block_end",
+          "named": true
+        },
+        {
+          "type": "handlebars",
+          "named": true
+        },
+        {
+          "type": "handleblock",
+          "named": true
+        },
+        {
+          "type": "literal_text",
+          "named": true
+        },
+        {
+          "type": "macro",
+          "named": true
+        },
+        {
+          "type": "partial",
+          "named": true
+        },
+        {
+          "type": "partial_start",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "partial_start",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "handlebars",
+          "named": true
+        },
+        {
+          "type": "handleblock",
+          "named": true
+        },
+        {
+          "type": "literal_text",
+          "named": true
+        },
+        {
+          "type": "macro",
+          "named": true
+        },
+        {
+          "type": "partial",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "inline",
+    "named": false
+  },
+  {
+    "type": "literal_text",
+    "named": true
+  },
+  {
+    "type": "{{",
+    "named": false
+  },
+  {
+    "type": "}}",
     "named": false
   }
 ]
