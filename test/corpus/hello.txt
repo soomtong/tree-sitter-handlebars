@@ -8,9 +8,8 @@ Hello {{world}}!
 
 (source_file
   (literal_text)
-  (handlebars
-    (expression
-	  (identifier)))
+  (helper_call
+    (identifier))
   (literal_text))
 
 =================
@@ -25,15 +24,9 @@ Hello world{{punct }}
 
 (source_file
   (literal_text)
-  (handlebars
-    (expression
-	  (identifier)))
+  (helper_call (identifier))
   (literal_text)
-  (handlebars
-    (expression
-	  (identifier)))
+  (helper_call (identifier))
   (literal_text)
-  (handlebars
-    (expression
-	  (identifier)))
+  (helper_call (identifier))
   (literal_text))

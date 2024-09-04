@@ -1,0 +1,20 @@
+==============
+Basic block example
+==============
+
+Some list
+{{#each thing}}
+* {{this}}
+{{/each}}
+
+---
+
+(source_file
+  (literal_text)
+  (handleblock
+    block_helper: (helper_call (identifier) (identifier))
+    (literal_text)
+	(helper_call
+	  (identifier))
+	(literal_text))
+  (literal_text))

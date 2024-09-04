@@ -17,7 +17,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "handlebars"
+          "name": "_handlebars"
         },
         {
           "type": "SYMBOL",
@@ -37,7 +37,7 @@
       "type": "PATTERN",
       "value": "[^{]+"
     },
-    "handlebars": {
+    "_handlebars": {
       "type": "SEQ",
       "members": [
         {
@@ -46,7 +46,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "expression"
+          "name": "_expression"
         },
         {
           "type": "STRING",
@@ -54,12 +54,12 @@
         }
       ]
     },
-    "expression": {
+    "_expression": {
       "type": "CHOICE",
       "members": [
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "helper_call"
         }
       ]
     },
@@ -67,7 +67,14 @@
       "type": "PATTERN",
       "value": "[a-zA-Z]+"
     },
-    "block_start": {
+    "helper_call": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "identifier"
+      }
+    },
+    "_block_start": {
       "type": "SEQ",
       "members": [
         {
@@ -82,8 +89,12 @@
               "value": "#"
             },
             {
-              "type": "SYMBOL",
-              "name": "identifier"
+              "type": "FIELD",
+              "name": "block_helper",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_expression"
+              }
             }
           ]
         },
@@ -93,38 +104,43 @@
         }
       ]
     },
-    "block_end": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "{{"
-        },
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "/"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "identifier"
-            }
-          ]
-        },
-        {
-          "type": "STRING",
-          "value": "}}"
-        }
-      ]
+    "_block_end": {
+      "type": "ALIAS",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "{{"
+          },
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "/"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              }
+            ]
+          },
+          {
+            "type": "STRING",
+            "value": "}}"
+          }
+        ]
+      },
+      "named": false,
+      "value": "/block"
     },
     "handleblock": {
       "type": "SEQ",
       "members": [
         {
           "type": "SYMBOL",
-          "name": "block_start"
+          "name": "_block_start"
         },
         {
           "type": "REPEAT",
@@ -135,11 +151,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "block_end"
+          "name": "_block_end"
         }
       ]
     },
-    "macro_start": {
+    "_macro_start": {
       "type": "SEQ",
       "members": [
         {
@@ -162,7 +178,7 @@
                 },
                 {
                   "type": "SYMBOL",
-                  "name": "expression"
+                  "name": "_expression"
                 }
               ]
             }
@@ -179,7 +195,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "macro_start"
+          "name": "_macro_start"
         },
         {
           "type": "REPEAT",
@@ -190,11 +206,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "block_end"
+          "name": "_block_end"
         }
       ]
     },
-    "partial_start": {
+    "_partial_start": {
       "type": "SEQ",
       "members": [
         {
@@ -210,7 +226,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "expression"
+              "name": "_expression"
             }
           ]
         },
@@ -225,7 +241,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "partial_start"
+          "name": "_partial_start"
         },
         {
           "type": "REPEAT",
@@ -236,7 +252,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "block_end"
+          "name": "_block_end"
         }
       ]
     }

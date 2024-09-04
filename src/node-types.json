@@ -1,86 +1,29 @@
 [
   {
-    "type": "block_end",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "block_start",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "expression",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "handlebars",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "expression",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "handleblock",
     "named": true,
-    "fields": {},
+    "fields": {
+      "block_helper": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "helper_call",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
-          "type": "block_end",
-          "named": true
-        },
-        {
-          "type": "block_start",
-          "named": true
-        },
-        {
-          "type": "handlebars",
-          "named": true
-        },
-        {
           "type": "handleblock",
+          "named": true
+        },
+        {
+          "type": "helper_call",
           "named": true
         },
         {
@@ -93,6 +36,21 @@
         },
         {
           "type": "partial",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "helper_call",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
           "named": true
         }
       ]
@@ -107,15 +65,15 @@
       "required": true,
       "types": [
         {
-          "type": "block_end",
-          "named": true
-        },
-        {
-          "type": "handlebars",
-          "named": true
-        },
-        {
           "type": "handleblock",
+          "named": true
+        },
+        {
+          "type": "helper_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
           "named": true
         },
         {
@@ -127,30 +85,7 @@
           "named": true
         },
         {
-          "type": "macro_start",
-          "named": true
-        },
-        {
           "type": "partial",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "macro_start",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "expression",
-          "named": true
-        },
-        {
-          "type": "identifier",
           "named": true
         }
       ]
@@ -165,15 +100,11 @@
       "required": true,
       "types": [
         {
-          "type": "block_end",
-          "named": true
-        },
-        {
-          "type": "handlebars",
-          "named": true
-        },
-        {
           "type": "handleblock",
+          "named": true
+        },
+        {
+          "type": "helper_call",
           "named": true
         },
         {
@@ -187,25 +118,6 @@
         {
           "type": "partial",
           "named": true
-        },
-        {
-          "type": "partial_start",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "partial_start",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "expression",
-          "named": true
         }
       ]
     }
@@ -216,14 +128,14 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
-          "type": "handlebars",
+          "type": "handleblock",
           "named": true
         },
         {
-          "type": "handleblock",
+          "type": "helper_call",
           "named": true
         },
         {
@@ -250,7 +162,7 @@
     "named": false
   },
   {
-    "type": "/",
+    "type": "/block",
     "named": false
   },
   {
