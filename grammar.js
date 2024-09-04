@@ -30,7 +30,7 @@ module.exports = grammar({
     handleblock: $ => seq($.block_start, repeat($._content), $.block_end),
     macro_start: $ => fancy_barred('*', seq($.identifier, $.expression)),
     macro: $ => seq($.macro_start, repeat($._content), $.block_end),
-    partial_start: $ => seq('{{', '>', $.expression, '}}'),
+    partial_start: $ => fancy_barred('>', $.expression),
     partial: $ => seq($.partial_start, repeat($._content), $.block_end),
   },
   // inline: $ => [$._content]
