@@ -39,3 +39,5 @@ dist/
 *.o
 # Grammar artifacts
 /bindings/*/
+# This will need to be made more specific when I add the custom scanner
+/src/*
