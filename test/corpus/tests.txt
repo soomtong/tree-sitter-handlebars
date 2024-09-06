@@ -1,0 +1,7 @@
+==============
+Partials
+==============
+{{> main}}
+---
+(source_file
+	(partial))
