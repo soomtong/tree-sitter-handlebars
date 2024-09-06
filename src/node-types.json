@@ -1,5 +1,10 @@
 [
   {
+    "type": "context_reference",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "handleblock",
     "named": true,
     "fields": {
@@ -7,6 +12,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "context_reference",
+            "named": true
+          },
           {
             "type": "helper_call",
             "named": true
@@ -18,6 +27,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "context_reference",
+          "named": true
+        },
         {
           "type": "handleblock",
           "named": true
@@ -50,7 +63,11 @@
       "required": true,
       "types": [
         {
-          "type": "identifier",
+          "type": "context_reference",
+          "named": true
+        },
+        {
+          "type": "helper_call",
           "named": true
         }
       ]
@@ -65,15 +82,15 @@
       "required": true,
       "types": [
         {
+          "type": "context_reference",
+          "named": true
+        },
+        {
           "type": "handleblock",
           "named": true
         },
         {
           "type": "helper_call",
-          "named": true
-        },
-        {
-          "type": "identifier",
           "named": true
         },
         {
@@ -99,6 +116,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "context_reference",
+          "named": true
+        },
         {
           "type": "handleblock",
           "named": true
@@ -131,6 +152,10 @@
       "required": false,
       "types": [
         {
+          "type": "context_reference",
+          "named": true
+        },
+        {
           "type": "handleblock",
           "named": true
         },
@@ -162,16 +187,16 @@
     "named": false
   },
   {
+    "type": ".",
+    "named": false
+  },
+  {
     "type": "/block",
     "named": false
   },
   {
     "type": ">",
     "named": false
-  },
-  {
-    "type": "identifier",
-    "named": true
   },
   {
     "type": "literal_text",

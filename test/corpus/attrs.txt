@@ -1,0 +1,7 @@
+==================
+Dotted attribute access
+==================
+{{fish.hat}}
+---
+(source_file
+	(context_reference))

@@ -8,8 +8,7 @@ Hello {{world}}!
 
 (source_file
   (literal_text)
-  (helper_call
-    (identifier))
+  (context_reference)
   (literal_text))
 
 =================
@@ -24,9 +23,9 @@ Hello world{{punct }}
 
 (source_file
   (literal_text)
-  (helper_call (identifier))
+  (context_reference)
   (literal_text)
-  (helper_call (identifier))
+  (context_reference)
   (literal_text)
-  (helper_call (identifier))
+  (context_reference)
   (literal_text))
