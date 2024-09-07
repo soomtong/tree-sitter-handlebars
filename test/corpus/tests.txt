@@ -5,3 +5,14 @@ Partials
 ---
 (source_file
 	(partial))
+=============
+Dynamic partials
+=============
+{{> (lookup this "fish")}}
+---
+(source_file
+	(partial
+		template:
+		(helper_call
+			(context_reference)
+			(string))))
