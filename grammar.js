@@ -9,6 +9,13 @@ function barred(body) {
 }
 
 /**
+ * @param {RuleOrLiteral} body
+ */
+function raw_barred(body) {
+  return seq('{{{', body, '}}}')
+}
+
+/**
  * @param {RuleOrLiteral} tag
  * @param {RuleOrLiteral} body
  */
@@ -20,9 +27,10 @@ module.exports = grammar({
   name: 'handlebars_html',
   rules: {
     source_file: $ => repeat1($._content),
-    _content: $ => choice($.literal_text, $._handlebars, $.handleblock, $.decorator_block, $.partial, $.partial_block),
+    _content: $ => choice($.literal_text, $._handlebars, $.raw_handlebars, $.handleblock, $.decorator_block, $.partial, $.partial_block),
     literal_text: _$ => /[^{]+/,
     _handlebars: $ => barred($._expression),
+    raw_handlebars: $ => raw_barred($._expression),
     _identifier: $ => choice(/[a-zA-Z0-9_-]+/, seq('@', $._special_identifier)),
     _special_identifier: _$ => choice('partial-block', 'index'),
     _template_name: $ => field('template', choice($._identifier, seq('(', $._expression, ')'))),

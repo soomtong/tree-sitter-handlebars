@@ -92,3 +92,12 @@ Partial with args
 	(partial (context_reference))
 	(literal_text)
 	(partial (context_reference) (context_injection (string))))
+=================
+Raw/unescaped moustache
+=================
+{{{some html}}}
+---
+(source_file
+	(raw_handlebars
+		(helper_call
+			(context_reference))))
