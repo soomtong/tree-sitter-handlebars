@@ -71,3 +71,11 @@ Bells-and-whistles block
 		context_injection: (context_injection (context_reference))
 		context_binding: (context_binding)
 		(literal_text)))
+
+================
+@partial-block block
+================
+{{#> @partial-block}}{{/@ partial-block}}
+---
+(source_file
+	(partial_block))
