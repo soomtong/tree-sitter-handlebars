@@ -6,14 +6,13 @@ Some list
 {{#each thing}}
 * {{this}}
 {{/each}}
-
 ---
 
 (source_file
   (literal_text)
   (handleblock
-    block_helper: (helper_call (context_reference))
+    block_arguments: (context_reference)
     (literal_text)
 	(context_reference)
 	(literal_text))
-  (literal_text))
+)

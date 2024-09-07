@@ -35,9 +35,7 @@ Decorators
 ---
 (source_file
 	(decorator_block
-		decorator:
-		(helper_call
-			(string))
+		block_arguments: (string)
 		(literal_text)
 		(context_reference)))
 ===========
@@ -54,9 +52,22 @@ Text here
 	(partial_block
 		(literal_text)
 		(decorator_block
-			decorator:
-			(helper_call (string))
+			block_arguments: (string)
 			(literal_text))
 	(literal_text)
 	(helper_call (string))
 	(literal_text)))
+===========
+Bells-and-whistles block
+===========
+{{# each worm (another_argument) fish=hat bear=face as |bears|}}
+{{/layout}}
+---
+(source_file
+	(handleblock
+		block_arguments: (context_reference)
+		block_arguments: (context_reference)
+		context_injection: (context_injection (context_reference))
+		context_injection: (context_injection (context_reference))
+		context_binding: (context_binding)
+		(literal_text)))
