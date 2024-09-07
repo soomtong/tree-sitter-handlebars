@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-handlebars",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Tree-sitter grammar for parsing handlebars templates with injections for the host language",
   "main": "grammar.js",
   "types": "bindings/node",
