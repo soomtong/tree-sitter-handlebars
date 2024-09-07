@@ -16,3 +16,15 @@ Dynamic partials
 		(helper_call
 			(context_reference)
 			(string))))
+=========
+Nested helpers
+=========
+{{ escape six (unescape "three") five four}}
+---
+(source_file
+	(helper_call
+		(context_reference)
+		(helper_call
+			(string))
+		(context_reference)
+		(context_reference)))
