@@ -31,7 +31,11 @@ module.exports = grammar({
     // Expressions
     _expression: $ => choice($.helper_call, $.context_reference, $.string, seq('(', $._expression, ')')),
     string: _$ => choice(seq("'", /[^']*/, "'"), seq('"', /[^"]*/, '"')),
-    context_reference: $ => prec(1, seq($._identifier, repeat(seq('.', $._identifier)))),
+    _field_path: $ => prec(1, choice(
+      seq($._identifier, optional(seq(/[./]/, $._field_path))),
+      seq('..', optional(seq('/', $._field_path)))
+    )),
+    context_reference: $ => $._field_path,
     helper_call: $ => prec.left(seq(field('helper', $._identifier), repeat1($._expression))),
 
     // Blocks

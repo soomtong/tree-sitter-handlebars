@@ -5,3 +5,10 @@ Dotted attribute access
 ---
 (source_file
 	(context_reference))
+==================
+Backtracking
+==================
+{{../fish.hat}}
+---
+(source_file
+	(context_reference))
