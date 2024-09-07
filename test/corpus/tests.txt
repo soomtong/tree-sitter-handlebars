@@ -28,3 +28,15 @@ Nested helpers
 			(string))
 		(context_reference)
 		(context_reference)))
+========
+Decorators
+========
+{{#*inline "fish"}}Template {{things}}{{/inline}}
+---
+(source_file
+	(decorator_block
+		decorator:
+		(helper_call
+			(string))
+		(literal_text)
+		(context_reference)))

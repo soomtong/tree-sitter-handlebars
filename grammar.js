@@ -20,7 +20,7 @@ module.exports = grammar({
   name: 'handlebars_html',
   rules: {
     source_file: $ => repeat1($._content),
-    _content: $ => choice($.literal_text, $._handlebars, $.handleblock, $.macro, $.partial),
+    _content: $ => choice($.literal_text, $._handlebars, $.handleblock, $.decorator_block, $.partial),
     literal_text: _$ => /[^{]+/,
     _handlebars: $ => barred($._expression),
     _expression: $ => choice($.helper_call, $.context_reference, $.string, seq('(', $._expression, ')')),
@@ -31,8 +31,9 @@ module.exports = grammar({
     _block_start: $ => fancy_barred('#', field('block_helper', $._expression)),
     _block_end: $ => alias(fancy_barred('/', $._identifier), '/block'),
     handleblock: $ => seq($._block_start, repeat($._content), $._block_end),
-    _macro_start: $ => fancy_barred('*', seq($._identifier, $._expression)),
-    macro: $ => seq($._macro_start, repeat($._content), $._block_end),
+    _decorator_start: $ => fancy_barred(token(seq('#', '*')),
+      field('decorator', $.helper_call)),
+    decorator_block: $ => seq($._decorator_start, repeat($._content), $._block_end),
     partial: $ => fancy_barred('>', field('template', choice($._identifier, seq('(', $._expression, ')'))))
     // These are for block partials, which should be {{#> ...}} instead of {{> ...}}
     // _partial_start: $ => fancy_barred('>', $._expression),
