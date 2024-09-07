@@ -20,7 +20,7 @@ module.exports = grammar({
   name: 'handlebars_html',
   rules: {
     source_file: $ => repeat1($._content),
-    _content: $ => choice($.literal_text, $._handlebars, $.handleblock, $.decorator_block, $.partial),
+    _content: $ => choice($.literal_text, $._handlebars, $.handleblock, $.decorator_block, $.partial, $.partial_block),
     literal_text: _$ => /[^{]+/,
     _handlebars: $ => barred($._expression),
     _expression: $ => choice($.helper_call, $.context_reference, $.string, seq('(', $._expression, ')')),
@@ -34,10 +34,10 @@ module.exports = grammar({
     _decorator_start: $ => fancy_barred(token(seq('#', '*')),
       field('decorator', $.helper_call)),
     decorator_block: $ => seq($._decorator_start, repeat($._content), $._block_end),
-    partial: $ => fancy_barred('>', field('template', choice($._identifier, seq('(', $._expression, ')'))))
-    // These are for block partials, which should be {{#> ...}} instead of {{> ...}}
-    // _partial_start: $ => fancy_barred('>', $._expression),
-    // partial: $ => seq($._partial_start, repeat($._content), $._block_end),
+    _template_name: $ => field('template', choice($._identifier, seq('(', $._expression, ')'))),
+    partial: $ => fancy_barred('>', $._template_name),
+    _partial_start: $ => fancy_barred(token(seq('#', '>')), $._template_name),
+    partial_block: $ => seq($._partial_start, repeat($._content), $._block_end)
   },
   // inline: $ => [$._content]
 })

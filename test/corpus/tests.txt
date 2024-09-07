@@ -40,3 +40,23 @@ Decorators
 			(string))
 		(literal_text)
 		(context_reference)))
+===========
+Call nested partial
+===========
+{{#> layout}}
+{{#*inline "sub"}}
+Text here
+{{/inline}}
+{{helper "fish"}}
+{{/layout}}
+---
+(source_file
+	(partial_block
+		(literal_text)
+		(decorator_block
+			decorator:
+			(helper_call (string))
+			(literal_text))
+	(literal_text)
+	(helper_call (string))
+	(literal_text)))
