@@ -79,3 +79,16 @@ Bells-and-whistles block
 ---
 (source_file
 	(partial_block))
+==================
+Partial with args
+==================
+{{> conjunction object=object1}}
+{{> message-summary this-message}}
+{{> message-summary this-message sentiment="disparage"}}
+---
+(source_file
+	(partial (context_injection (context_reference)))
+	(literal_text)
+	(partial (context_reference))
+	(literal_text)
+	(partial (context_reference) (context_injection (string))))

@@ -23,10 +23,10 @@ module.exports = grammar({
     _content: $ => choice($.literal_text, $._handlebars, $.handleblock, $.decorator_block, $.partial, $.partial_block),
     literal_text: _$ => /[^{]+/,
     _handlebars: $ => barred($._expression),
-    _identifier: $ => choice(/[a-zA-Z_]+/, seq('@', $._special_identifier)),
+    _identifier: $ => choice(/[a-zA-Z0-9_-]+/, seq('@', $._special_identifier)),
     _special_identifier: _$ => choice('partial-block', 'index'),
     _template_name: $ => field('template', choice($._identifier, seq('(', $._expression, ')'))),
-    partial: $ => fancy_barred('>', $._template_name),
+    partial: $ => fancy_barred('>', seq($._template_name, optional($._expression), repeat($.context_injection))),
 
     // Expressions
     _expression: $ => choice($.helper_call, $.context_reference, $.string, seq('(', $._expression, ')')),
