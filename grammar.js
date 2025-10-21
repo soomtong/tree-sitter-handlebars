@@ -27,7 +27,7 @@ module.exports = grammar({
   name: 'handlebars_html',
   rules: {
     source_file: $ => repeat1($._content),
-    _content: $ => choice($.literal_text, $._handlebars, $.raw_handlebars, $.handleblock, $.decorator_block, $.partial, $.partial_block),
+    _content: $ => choice($.literal_text, $._handlebars, $.raw_handlebars, $.handleblock, $.decorator_block, $.partial, $.partial_block, $.simple_comment, $.block_comment),
     literal_text: _$ => /[^{]+/,
     _handlebars: $ => barred($._expression),
     raw_handlebars: $ => raw_barred($._expression),
@@ -35,6 +35,11 @@ module.exports = grammar({
     _special_identifier: _$ => choice('partial-block', 'index'),
     _template_name: $ => field('template', choice($._identifier, seq('(', $._expression, ')'))),
     partial: $ => fancy_barred('>', seq($._template_name, optional($._expression), repeat($.context_injection))),
+
+    // Comments
+    simple_comment: $ => seq('{{!', optional($.comment_content), '}}'),
+    block_comment: $ => seq('{{!--', optional($.comment_content), '--}}'),
+    comment_content: _$ => /[^-}]+/,
 
     // Expressions
     _expression: $ => choice($.helper_call, $.context_reference, $.string, seq('(', $._expression, ')')),
