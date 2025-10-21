@@ -1,0 +1,57 @@
+================
+Simple comment
+================
+{{! This is a comment }}
+---
+(source_file
+  (simple_comment
+    (comment_content)))
+
+================
+Block comment
+================
+{{!-- This is a comment --}}
+---
+(source_file
+  (block_comment
+    (comment_content)))
+
+================
+Comment with content
+================
+{{! This is a comment with content }}
+---
+(source_file
+  (simple_comment
+    (comment_content)))
+
+================
+Block comment with content
+================
+{{!-- This is a block comment with content --}}
+---
+(source_file
+  (block_comment
+    (comment_content)))
+
+================
+Mixed content with comments
+================
+<div>{{! comment }}</div>
+---
+(source_file
+  (literal_text)
+  (simple_comment
+    (comment_content))
+  (literal_text))
+
+================
+Block comment in content
+================
+<div>{{!-- block comment --}}</div>
+---
+(source_file
+  (literal_text)
+  (block_comment
+    (comment_content))
+  (literal_text))
