@@ -41,3 +41,8 @@ dist/
 /bindings/*/
 # This will need to be made more specific when I add the custom scanner
 /src/*
+
+# Project configuration files
+CMakeLists.txt
+Makefile
+package.json
