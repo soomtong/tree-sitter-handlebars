@@ -1,0 +1,40 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "handlebars_html",
+      "camelcase": "HandlebarsHtml",
+      "title": "HandlebarsHtml",
+      "scope": "source.handlebars_html",
+      "file-types": [
+        "handlebars", "hdbs", "hbs", "hjs", "mst", "mu", "mustache", "stache",
+        "html"
+      ],
+      "injection-regex": "^handlebars_html$",
+      "class-name": "TreeSitterHandlebarsHtml"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "HandlebarsHtml grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "soomtong",
+        "email": "soomtong@gmail.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/tree-sitter/tree-sitter-handlebars_html"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": false,
+    "node": false,
+    "python": false,
+    "rust": false,
+    "swift": false,
+    "zig": false
+  }
+}
