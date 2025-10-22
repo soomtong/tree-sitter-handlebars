@@ -1,0 +1,718 @@
+[
+  {
+    "type": "/block",
+    "named": false,
+    "fields": {}
+  },
+  {
+    "type": "block_comment",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "comment_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "context_binding",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "context_injection",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "context_reference",
+          "named": true
+        },
+        {
+          "type": "helper_call",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "context_reference",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "decorator_block",
+    "named": true,
+    "fields": {
+      "block_arguments": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "context_reference",
+            "named": true
+          },
+          {
+            "type": "helper_call",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "block_helper": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "@",
+            "named": false
+          },
+          {
+            "type": "index",
+            "named": false
+          },
+          {
+            "type": "partial-block",
+            "named": false
+          }
+        ]
+      },
+      "context_binding": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "context_binding",
+            "named": true
+          }
+        ]
+      },
+      "context_injection": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "context_injection",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "block_comment",
+          "named": true
+        },
+        {
+          "type": "context_reference",
+          "named": true
+        },
+        {
+          "type": "decorator_block",
+          "named": true
+        },
+        {
+          "type": "handleblock",
+          "named": true
+        },
+        {
+          "type": "helper_call",
+          "named": true
+        },
+        {
+          "type": "literal_text",
+          "named": true
+        },
+        {
+          "type": "partial",
+          "named": true
+        },
+        {
+          "type": "partial_block",
+          "named": true
+        },
+        {
+          "type": "raw_handlebars",
+          "named": true
+        },
+        {
+          "type": "simple_comment",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "handleblock",
+    "named": true,
+    "fields": {
+      "block_arguments": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "context_reference",
+            "named": true
+          },
+          {
+            "type": "helper_call",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "block_helper": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "@",
+            "named": false
+          },
+          {
+            "type": "index",
+            "named": false
+          },
+          {
+            "type": "partial-block",
+            "named": false
+          }
+        ]
+      },
+      "context_binding": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "context_binding",
+            "named": true
+          }
+        ]
+      },
+      "context_injection": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "context_injection",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "block_comment",
+          "named": true
+        },
+        {
+          "type": "context_reference",
+          "named": true
+        },
+        {
+          "type": "decorator_block",
+          "named": true
+        },
+        {
+          "type": "handleblock",
+          "named": true
+        },
+        {
+          "type": "helper_call",
+          "named": true
+        },
+        {
+          "type": "literal_text",
+          "named": true
+        },
+        {
+          "type": "partial",
+          "named": true
+        },
+        {
+          "type": "partial_block",
+          "named": true
+        },
+        {
+          "type": "raw_handlebars",
+          "named": true
+        },
+        {
+          "type": "simple_comment",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "helper_call",
+    "named": true,
+    "fields": {
+      "helper": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "@",
+            "named": false
+          },
+          {
+            "type": "index",
+            "named": false
+          },
+          {
+            "type": "partial-block",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "context_reference",
+          "named": true
+        },
+        {
+          "type": "helper_call",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "partial",
+    "named": true,
+    "fields": {
+      "template": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "@",
+            "named": false
+          },
+          {
+            "type": "context_reference",
+            "named": true
+          },
+          {
+            "type": "helper_call",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": false
+          },
+          {
+            "type": "partial-block",
+            "named": false
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "context_injection",
+          "named": true
+        },
+        {
+          "type": "context_reference",
+          "named": true
+        },
+        {
+          "type": "helper_call",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "partial_block",
+    "named": true,
+    "fields": {
+      "block_arguments": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "context_reference",
+            "named": true
+          },
+          {
+            "type": "helper_call",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "block_helper": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "@",
+            "named": false
+          },
+          {
+            "type": "index",
+            "named": false
+          },
+          {
+            "type": "partial-block",
+            "named": false
+          }
+        ]
+      },
+      "context_binding": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "context_binding",
+            "named": true
+          }
+        ]
+      },
+      "context_injection": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "context_injection",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "block_comment",
+          "named": true
+        },
+        {
+          "type": "context_reference",
+          "named": true
+        },
+        {
+          "type": "decorator_block",
+          "named": true
+        },
+        {
+          "type": "handleblock",
+          "named": true
+        },
+        {
+          "type": "helper_call",
+          "named": true
+        },
+        {
+          "type": "literal_text",
+          "named": true
+        },
+        {
+          "type": "partial",
+          "named": true
+        },
+        {
+          "type": "partial_block",
+          "named": true
+        },
+        {
+          "type": "raw_handlebars",
+          "named": true
+        },
+        {
+          "type": "simple_comment",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "raw_handlebars",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "context_reference",
+          "named": true
+        },
+        {
+          "type": "helper_call",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "simple_comment",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "comment_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "block_comment",
+          "named": true
+        },
+        {
+          "type": "context_reference",
+          "named": true
+        },
+        {
+          "type": "decorator_block",
+          "named": true
+        },
+        {
+          "type": "handleblock",
+          "named": true
+        },
+        {
+          "type": "helper_call",
+          "named": true
+        },
+        {
+          "type": "literal_text",
+          "named": true
+        },
+        {
+          "type": "partial",
+          "named": true
+        },
+        {
+          "type": "partial_block",
+          "named": true
+        },
+        {
+          "type": "raw_handlebars",
+          "named": true
+        },
+        {
+          "type": "simple_comment",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
+    "type": "'",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "--}}",
+    "named": false
+  },
+  {
+    "type": "..",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": "/block",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": "@",
+    "named": false
+  },
+  {
+    "type": "as",
+    "named": false
+  },
+  {
+    "type": "comment_content",
+    "named": true
+  },
+  {
+    "type": "index",
+    "named": false
+  },
+  {
+    "type": "literal_text",
+    "named": true
+  },
+  {
+    "type": "partial-block",
+    "named": false
+  },
+  {
+    "type": "{{",
+    "named": false
+  },
+  {
+    "type": "{{!",
+    "named": false
+  },
+  {
+    "type": "{{!--",
+    "named": false
+  },
+  {
+    "type": "{{{",
+    "named": false
+  },
+  {
+    "type": "|",
+    "named": false
+  },
+  {
+    "type": "}}",
+    "named": false
+  },
+  {
+    "type": "}}}",
+    "named": false
+  }
+]
